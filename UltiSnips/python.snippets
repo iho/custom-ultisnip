@@ -1,0 +1,14 @@
+snippet aioi "aiopg insert" b
+with (yield from request.app['database']) as conn:
+    yield from conn.execute(${1:table}() 
+	.values(
+	    ${2:key}=${3:value})
+				 )
+endsnippet
+
+snippet aios "get session" b
+# yield from request.post()
+# yield from request.get()
+session = yield from get_session(request)
+endsnippet
+
