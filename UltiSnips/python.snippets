@@ -1,5 +1,5 @@
 snippet aioi "aiopg insert" b
-query = ${1:tablename}.select().where({$1}.c.${2:column} == ${2})
+query = ${1:tablename}.select().where($1.c.${2:column} == $2)
 with (yield from request.app['database']) as conn:
     res = yield from conn.execute(query)
     res = yield from res.first()
