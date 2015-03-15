@@ -1,9 +1,8 @@
 snippet aioi "aiopg insert" b
+query = ${1:tablename}.select().where({$1}.c.${2:column} == ${2})
 with (yield from request.app['database']) as conn:
-    yield from conn.execute(${1:table}() 
-	.values(
-	    ${2:key}=${3:value})
-				 )
+    res = yield from conn.execute(query)
+    res = yield from res.first()
 endsnippet
 
 snippet aios "get session" b
