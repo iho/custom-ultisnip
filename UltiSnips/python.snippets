@@ -5,6 +5,9 @@ with (yield from request.app['database']) as conn:
     res = yield from res.first()
 endsnippet
 
+snippet yf "yield from" b
+yield from ${1} 
+endsnippet 
 snippet aios "get session" b
 # yield from request.post()
 # yield from request.get()
