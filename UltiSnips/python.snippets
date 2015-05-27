@@ -1,3 +1,5 @@
+priority 1
+
 snippet aioi "aiopg insert" b
 query = ${1:tablename}.select().where($1.c.${2:column} == $2)
 with (yield from request.app['database']) as conn:
@@ -6,8 +8,9 @@ with (yield from request.app['database']) as conn:
 endsnippet
 
 snippet yf "yield from" b
-yield from ${1} 
+yield from ${1:lol} 
 endsnippet 
+
 snippet aios "get session" b
 # yield from request.post()
 # yield from request.get()
@@ -20,15 +23,62 @@ endsnippet
 
 snippet adef "async function" b
 async def ${1}(${2}):
-    ${3}
+    ${3:pass}
 endsnippet
 
 snippet awith "async with" b
 async with ${1}:
-    ${2}
+    ${2:pass}
 endsnippet
 
 snippet str "python3" b
 def __str__(self):
     ${1:representation}
+endsnippet
+
+
+
+##########################
+# Try / Except / Finally #
+##########################
+snippet try "Try / Except" b
+try:
+	${1:pass}
+except ${2:Exception} as ${3:e}:
+	${4:raise $3}
+endsnippet
+
+snippet try "Try / Except / Else" b
+try:
+	${1:pass}
+except ${2:Exception} as ${3:e}:
+	${4:raise $3}
+else:
+	${5:pass}
+endsnippet
+
+snippet try "Try / Except / Finally" b
+try:
+	${1:pass}
+except ${2:Exception} as ${3:e}:
+	${4:raise $3}
+finally:
+	${5:pass}
+endsnippet
+
+snippet try "Try / Except / Else / Finally" b
+try:
+	${1:pass}
+except${2: ${3:Exception} as ${4:e}}:
+	${5:raise}
+else:
+	${6:pass}
+finally:
+	${7:pass}
+endsnippet
+
+snippet cl "class" b
+class ${1:ClassName}:
+    def __init__(self, ${2:}):
+	    ${3}
 endsnippet
