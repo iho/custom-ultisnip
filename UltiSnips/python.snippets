@@ -7,7 +7,7 @@ with (yield from request.app['database']) as conn:
     res = yield from res.first()
 endsnippet
 
-snippet yf "yield from" b
+snippet yf "yield from"
 yield from ${1:lol} 
 endsnippet 
 
@@ -82,3 +82,12 @@ class ${1:ClassName}:
     def __init__(self, ${2:}):
 	    ${3}
 endsnippet
+
+snippet p "print()" 
+print(${1:result})
+endsnippet
+
+snippet self "self.var = var" 
+self.${1:result} = ${1}
+endsnippet
+
